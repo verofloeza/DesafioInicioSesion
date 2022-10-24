@@ -1,0 +1,21 @@
+.colorBlue{
+    color: blue;
+    float: left;
+    margin-left: 10px;
+}
+.colorBrown{
+    color: brown;
+    float: left;
+    margin-left: 10px;
+}
+.textMessage{
+    float: left;
+    color:green;
+    font-style: italic;
+    margin-left: 10px;
+}
+.cont{
+    position: relative;
+    width: 100%;
+    
+}

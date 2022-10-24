@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <div class="jumbotron">
+        {{#if FORM_SESSION}}
+            {{> formLogin}}
+        {{else if FORM_REGISTER}}
+            {{> formRegister}}
+        {{else if DETROY_SESSION}}
+            {{> detroySession}}
+        {{else if PRODUCTOS_FAKER}}
+            {{> historico}}
+        {{else}}
+            <div class="row">
+                <div class="col-10">
+                    <h1 style="color:green;">Bienvenido {{USUARIO}}</h1>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-warning mt-3 mb-5 float-right" type="button" onclick="desloguear()">Desloguear</button>
+                </div>
+            </div>
+            <h2 style="color:crimson;">Centro de mensajes (Compresión: <span id="porcentaje"></span>%) </h2>
+            {{> form }}
+            {{> historialMensajes }}
+            {{> formMensajes}}
+        {{/if}}
+    </div>
+</div>

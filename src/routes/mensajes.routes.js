@@ -17,11 +17,6 @@ async function generateHash(pass){
     return hashPass;
 }
 
-// async function verifyHash(user, pass){
-//     const match = await bcrypt.compare(pass, user.password);
-//     return match
-// }
-
 function isAuth(req, res, next) {
     if(req.isAuthenticated()){
         next()
@@ -63,24 +58,6 @@ routerMensajes.get('/register', (req, res)=> {
     return res.status(200).render('vista', {FORM_REGISTER});
 });
 
-// routerMensajes.get('/loginSession', async (req, res)=> {
-//     const { username , password} = req.body
-//     let USUARIO = await ApiUsuarios.getUsuario(username);
-//     if (!USUARIO) {
-//         res.redirect('/login-error');
-//         return 
-//     }
-//     let PASS =await verifyHash(password, USUARIO.password)
-//     if( !PASS){
-//         res.redirect('/login-error');
-//         return 
-//     }
-
-//     req.user.user = username;
-//     req.user.admin = true;
-    
-//     res.redirect('/');
-// });
 
 routerMensajes.post('/registerSession', async (req, res)=> {
     const { username, password } = req.body
@@ -103,8 +80,6 @@ routerMensajes.get('/logout', (req, res)=> {
         }
     });
 });
-
-// routerMensajes.post('/login', passport.authenticate('local',  {successRedirect: '/', failureRedirect: '/login-error'} ));
 
 routerMensajes.get('/login-error', (req, res)=>{
     res.render('login-error');
